@@ -1,17 +1,31 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+  import ToolPanel from './components/ToolPanel.vue'
+  import Canvas from './components/Canvas.vue'
+  import { store } from './store.js'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
   </header>
 
   <main>
-    hello
+    <b-container fluid>
+      <b-row >
+        <b-col>
+          <ToolPanel />
+        </b-col>
+
+        <b-col>
+          {{ store.tool }}
+        </b-col>
+      </b-row>
+
+      <b-row>
+        <b-col>
+          <Canvas />
+        </b-col>
+      </b-row>
+
+    </b-container>
   </main>
 </template>
