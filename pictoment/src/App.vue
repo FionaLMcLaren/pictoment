@@ -1,7 +1,10 @@
 <script setup>
   import ToolPanel from './components/ToolPanel.vue'
+  import PalettePanel from './components/PalettePanel.vue'
   import Canvas from './components/Canvas.vue'
   import { store } from './store.js'
+
+  store.setDefaults("Brush", 0)
 </script>
 
 <template>
@@ -11,19 +14,15 @@
   <main>
     <b-container fluid>
       <b-row >
-        <b-col>
-          <ToolPanel />
-        </b-col>
+          <PalettePanel />
+      </b-row>
 
-        <b-col>
-          {{ store.tool }}
-        </b-col>
+      <b-row >
+          <ToolPanel />
       </b-row>
 
       <b-row>
-        <b-col>
           <Canvas />
-        </b-col>
       </b-row>
 
     </b-container>

@@ -4,12 +4,17 @@
 </script>
 
 <template>
-  <div>
+  <div class=" position-relative">
+    <div 
+      id="guide"
+      ref="guide"
+      class="position-absolute left-0 top-0 d-none bg-primary h-100 w-100 opactiy-75">
+    </div>
     <canvas 
       id="pixcanvas"
       ref="pixcanvas" 
-      width="320" 
-      height="320" 
+      width="720" 
+      height="720" 
       class="bg-white"
     ></canvas>
   </div>
@@ -30,9 +35,13 @@
       const bounding = canvas.getBoundingClientRect();
       var drawing = false;
 
-      function draw(x, y) {
-          ctx.fillStyle = "red";
+      function paint(x, y) {
+          ctx.fillStyle = store.colour;
           ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+      }
+
+      function erase(x, y) {
+          ctx.clearRect(x * cellSize, y * cellSize, cellSize, cellSize);
       }
 
       canvas.addEventListener('mousedown', (el) => { 
@@ -55,7 +64,12 @@
         y = Math.floor(cellCount * y / canvas.clientHeight);
 
         if (drawing) {
-          draw(x, y);
+          if (store.tool == "Brush") {
+            paint(x, y);
+          }
+          if (store.tool == "Eraser") {
+            erase(x, y);
+          }
         }
 
         console.log(x,y);
