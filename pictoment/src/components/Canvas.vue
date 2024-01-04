@@ -58,8 +58,6 @@
         var x = el.clientX - bounding.left;
         var y = el.clientY - bounding.top;
 
-        console.log(x,y)
-
         x = Math.floor(cellCount * x / canvas.clientWidth);
         y = Math.floor(cellCount * y / canvas.clientHeight);
 
@@ -71,8 +69,6 @@
             erase(x, y);
           }
         }
-
-        console.log(x,y);
       })
     }
 

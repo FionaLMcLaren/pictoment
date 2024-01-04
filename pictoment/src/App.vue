@@ -1,6 +1,7 @@
 <script setup>
   import ToolPanel from './components/ToolPanel.vue'
   import PalettePanel from './components/PalettePanel.vue'
+  import CanvasPanel from './components/CanvasPanel.vue'
   import Canvas from './components/Canvas.vue'
   import { store } from './store.js'
 
@@ -12,13 +13,23 @@
   </header>
 
   <main>
-    <b-container fluid>
-      <b-row >
-          <PalettePanel />
-      </b-row>
+    <b-container>
 
-      <b-row >
-          <ToolPanel />
+      <b-row>
+        <b-row >
+            <PalettePanel />
+        </b-row>
+
+        <b-row>
+          <b-col >
+              <ToolPanel />
+          </b-col>
+
+          <b-col>
+              <CanvasPanel />
+          </b-col>
+        </b-row>
+
       </b-row>
 
       <b-row>
