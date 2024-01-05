@@ -30,3 +30,23 @@
   max-width: 50%;
 }
 
+/* Tab */
+
+.tab {
+  margin: 2rem;
+  background-color: gray;
+  padding: 0.3rem;
+  border-bottom: 4px solid var(--con-shadow);
+  border-top: 4px solid var(--con-bg);
+  box-shadow:
+    -4px 0 0 -2px var(--con-bg),   /* Left inner shadow */
+    -8px 0 0 -4px var(--con-bg), /* Leftmost shadow */
+     4px 0 0 -2px var(--con-shadow),   /* Right inner shadow */
+     8px 0 0 -4px var(--con-shadow); /* Rightmost shadow */
+}
+
+.tab-title {
+  background-color: var(--con-tab);
+  color: var(--con-bg);
+}
+

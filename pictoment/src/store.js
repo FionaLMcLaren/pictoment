@@ -17,11 +17,13 @@ export const store = reactive({
   tool: "",
   palette: {},
   colour: "",
+  size: 0,
 
   setDefaults(defaultTool, defaultPalette) {
     this.tool = defaultTool;
     this.palette = this.paletteOps[defaultPalette];
     this.colour = this.palette.colours[0];
+    this.size = 1;
   },
 
   selectTool(tool, toolPanel) {
@@ -49,6 +51,10 @@ export const store = reactive({
       }
       idx++;
     });
+  },
+
+  selectSize(selSize) {
+    this.size = selSize;
   }
   
 })

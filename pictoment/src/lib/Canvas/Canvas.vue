@@ -1,5 +1,5 @@
 <script setup>
-  import { store } from '../store.js'
+  import { store } from '../../store.js'
   import { onMounted, ref } from 'vue'
 </script>
 
@@ -13,8 +13,8 @@
     <canvas 
       id="pixcanvas"
       ref="pixcanvas" 
-      width="720" 
-      height="720" 
+      width="480" 
+      height="480" 
       class="bg-white"
     ></canvas>
   </div>
@@ -26,35 +26,33 @@
       const canvas = this.$refs.pixcanvas;
 
       const canvasWidth = canvas.width;
-      const canvasHeight = canvas.height;
-
-      const cellCount = canvasWidth / 15;
-      const cellSize = canvasWidth / cellCount;  
 
       const ctx = canvas.getContext("2d");
       const bounding = canvas.getBoundingClientRect();
       var drawing = false;
 
-      function paint(x, y) {
+      function paint(x, y, cellCount) {
+          let cellSize = (canvasWidth / cellCount);
           ctx.fillStyle = store.colour;
           ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
       }
 
-      function erase(x, y) {
+      function erase(x, y, cellCount) {
+          let cellSize = (canvasWidth / cellCount);
           ctx.clearRect(x * cellSize, y * cellSize, cellSize, cellSize);
       }
 
       canvas.addEventListener('mousedown', (el) => { 
         drawing = true;
-        console.log(drawing);
       })
 
       canvas.addEventListener('mouseup', (el) => { 
         drawing = false;
-        console.log(drawing);
       })
 
       canvas.addEventListener('mousemove', (el) => {
+        var cellCount = canvasWidth / (15 * store.size); 
+
         var x = el.clientX - bounding.left;
         var y = el.clientY - bounding.top;
 
@@ -62,11 +60,12 @@
         y = Math.floor(cellCount * y / canvas.clientHeight);
 
         if (drawing) {
+          console.log(x, y);
           if (store.tool == "Brush") {
-            paint(x, y);
+            paint(x, y, cellCount);
           }
           if (store.tool == "Eraser") {
-            erase(x, y);
+            erase(x, y, cellCount);
           }
         }
       })
