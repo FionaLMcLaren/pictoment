@@ -33,20 +33,79 @@
 /* Tab */
 
 .tab {
-  margin: 2rem;
-  background-color: gray;
+  position: relative;
+  background-color: var(--con-bg);
   padding: 0.3rem;
+  padding-top: 3rem;
   border-bottom: 4px solid var(--con-shadow);
-  border-top: 4px solid var(--con-bg);
+  border-top: 4px solid var(--con-sec-shadow);
   box-shadow:
-    -4px 0 0 -2px var(--con-bg),   /* Left inner shadow */
-    -8px 0 0 -4px var(--con-bg), /* Leftmost shadow */
-     4px 0 0 -2px var(--con-shadow),   /* Right inner shadow */
-     8px 0 0 -4px var(--con-shadow); /* Rightmost shadow */
+    -4px 0 0 -2px var(--con-sec-shadow),   
+    -8px 0 0 -4px var(--con-sec-shadow), 
+     4px 0 0 -2px var(--con-shadow),   
+     8px 0 0 -4px var(--con-shadow); 
+}
+
+.tab:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border: 4px solid var(--con-shade);
 }
 
 .tab-title {
   background-color: var(--con-tab);
   color: var(--con-bg);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0.2rem;
+  width: 70%;
+  z-index: 1;
+  padding: 0.2rem 0.5rem;
+
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow:
+      0.5px 0.5px 0 var(--con-tab-sec),
+    -1px -1px 0 var(--con-tab-sec),  
+     1px -1px 0 var(--con-tab-sec),
+     -1px 1px 0 var(--con-tab-sec),
+      1px 1px 0 var(--con-tab-sec);
+  }
+
+.tab-title:before, .tab-title:after {
+  display: block;
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 3.5vh;
+  z-index: 2;
+  background-color: var(--con-tab);
 }
 
+.tab-title:before {
+  right: -3vh;
+  top: 0;
+}
+
+.tab-title:after {
+  right: -6.5vh;
+  bottom: 0;
+}
+
+.tab-icons {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  color: var(--con-icons);
+  transform: scale(0.9);
+}

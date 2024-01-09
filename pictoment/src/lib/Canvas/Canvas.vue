@@ -15,7 +15,7 @@
       ref="pixcanvas" 
       width="480" 
       height="480" 
-      class="bg-white"
+      class="bg-white object-fit-scale border rounded"
     ></canvas>
   </div>
 </template>
