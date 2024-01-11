@@ -15,6 +15,11 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
+  function toggleGrid() {
+    let grid = document.getElementById("guide");
+    grid.classList.toggle("d-none");
+  }
+
 </script>
 
 
@@ -31,6 +36,13 @@
           @click = "clear()"
         >
           Clear
+        </b-button>
+
+        
+        <b-button
+          @click = "toggleGrid()"
+        >
+          Toggle grid
         </b-button>
     </b-button-group>
   </div>
