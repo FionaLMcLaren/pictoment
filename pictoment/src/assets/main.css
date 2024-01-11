@@ -109,3 +109,25 @@
   color: var(--con-icons);
   transform: scale(0.9);
 }
+
+
+/* Canvas */
+
+.pixcanvas {
+  position: relative;
+  padding: 0.3rem;
+  border-bottom: 3px solid var(--con-shade);
+  border-top: 3px solid var(--con-shade);
+  box-shadow:
+    -4px 0 0 -2px var(--con-shade),   
+    -6.5px 0 0 -4px var(--con-shade), 
+     4px 0 0 -2px var(--con-shade),   
+     6.5px 0 0 -4px var(--con-shade); 
+}
+
+.guide {
+  z-index: 1;
+  opacity: 0.5;
+  padding: 0.3rem;
+}
+

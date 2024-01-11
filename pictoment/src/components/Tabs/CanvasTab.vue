@@ -15,7 +15,7 @@
     </b-col>
   </b-row>
 
-    <b-row>
+    <b-row class="pt-2 mx-auto w-100 text-center">
         <slot />
     </b-row>
 

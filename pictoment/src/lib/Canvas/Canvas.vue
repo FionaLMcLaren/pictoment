@@ -4,19 +4,21 @@
 </script>
 
 <template>
-  <div class=" position-relative">
-    <div 
+  <div class="position-relative">
+    <canvas 
       id="guide"
       ref="guide"
-      class="position-absolute left-0 top-0 d-none bg-primary h-100 w-100 opactiy-75">
-    </div>
+      width="480" 
+      height="480" 
+      class="guide position-absolute"
+    />
     <canvas 
       id="pixcanvas"
       ref="pixcanvas" 
       width="480" 
       height="480" 
-      class="bg-white object-fit-scale border rounded"
-    ></canvas>
+      class="pixcanvas bg-white"
+    />
   </div>
 </template>
 
@@ -30,6 +32,27 @@
       const ctx = canvas.getContext("2d");
       const bounding = canvas.getBoundingClientRect();
       var drawing = false;
+
+      const canvasGrid = this.$refs.guide;
+      const gridCtx = canvasGrid.getContext("2d");
+      
+      function drawGrid(width, height, cellCount) {
+        let cellSize = (canvasWidth / cellCount);
+        canvasGrid.height = cellSize;
+        canvasGrid.width = cellSize;
+
+        for (let x = 0; x < width; x ++) {
+          for (let y = 0; y < width; y ++) {
+            ctx.moveTo(x, y);
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 0.2;
+            ctx.strokeRect(x * cellSize, y * cellSize, cellSize, cellSize);
+          }
+        }
+      }
+
+      drawGrid(canvasWidth, canvasWidth, (canvasWidth / (15 * store.size)));
+
 
       function paint(x, y, cellCount) {
           let cellSize = (canvasWidth / cellCount);
