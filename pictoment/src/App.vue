@@ -2,9 +2,11 @@
   import ToolPanel from './lib/Tool/ToolPanel.vue'
   import PalettePanel from './lib/Palette/PalettePanel.vue'
   import CanvasPanel from './lib/Canvas/CanvasPanel.vue'
+  import TaskPanel from './lib/Taskbar/TaskPanel.vue' 
   import Canvas from './lib/Canvas/Canvas.vue'
 
   import CanvasTab from './components/Tabs/CanvasTab.vue'
+  import TaskBar from './components/Taskbar/TaskBar.vue'
 
   import { store } from './store.js'
 
@@ -17,10 +19,15 @@
 
   <main>
     <b-container>   
+
       
-      <CanvasTab>
+    <CanvasTab>
       <Canvas />
     </CanvasTab>
+
+    <TaskBar>
+      <TaskPanel />
+    </TaskBar>
 
       <b-row>
         <b-row >

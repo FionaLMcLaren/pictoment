@@ -15,6 +15,7 @@
     "bootstrap-vue": "^2.23.1",
     "jquery": "^3.7.1",
     "nes.icons": "^2.0.1",
+    "pixelarticons": "^1.7.0",
     "vue": "^3.3.13"
   },
   "devDependencies": {

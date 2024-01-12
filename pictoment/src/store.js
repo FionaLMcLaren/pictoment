@@ -2,6 +2,7 @@ import { reactive } from 'vue'
 
 export const store = reactive({
   paletteOps: [
+    { name: 'app', colours: ["#1f1d55", "#c4bbdf", "#a5d2ff", " #532ac8", "#ffbfe7"] },
     { name: 'peach', colours: ["#FFEFFF", "#FF9AAD", "#EF559C", "#FF65AD", "#FF0063", "#BD4573", "#CE0052", "#9C0031", "#522031"]}, 
     { name: 'cherry', colours: ["#FFBACE", "#FF7573", "#DE3010", "#FF5542", "#FF0000", "#CE6563", "#BD4542", "#BD0000", "#8C2021"]},
     { name: 'orange', colours: ["#DECFBD", "#FFCF63", "#DE6521", "#FFAA21", "#FF6500", "#BD8A52", "#DE4500", "#BD4500", "#633010"]},
