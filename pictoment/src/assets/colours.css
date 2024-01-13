@@ -1,0 +1,23 @@
+:root {
+    /* primary */
+    --pri: #c4bbdf;
+    --pri-l: #F5EBFF;
+    --pri-d: #9382EC;
+
+    /* secondary */
+    --sec: #a5d2ff;
+    --sec-l: #D5F4FF;
+    --sec-d: #532ac8;
+
+    /* tertiary */
+    --ter: #ffbfe7;
+    --ter-l: #FFE5FF;
+    --ter-d: #DD65B7;
+
+    /*neutrals*/
+    --bg: #ffffff;
+    --text: #070D42;
+    --shadow: #1f1d55;
+    --shade: rgba(196,187,223, 0.4);
+  }
+  

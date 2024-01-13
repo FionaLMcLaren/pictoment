@@ -6,6 +6,7 @@
   import Canvas from './lib/Canvas/Canvas.vue'
 
   import CanvasTab from './components/Tabs/CanvasTab.vue'
+  import SideTab from './components/Tabs/SideTab.vue'
   import TaskBar from './components/Taskbar/TaskBar.vue'
 
   import { store } from './store.js'
@@ -19,15 +20,30 @@
 
   <main>
     <b-container>   
+      <b-row>
+
+        <b-col>
+          <SideTab>
+            hii
+          </SideTab>
+        </b-col>
+
+        <b-col cols="8">
+          <CanvasTab>
+            <Canvas />
+          </CanvasTab>
+        </b-col>
+      </b-row>
 
       
-    <CanvasTab>
-      <Canvas />
-    </CanvasTab>
+
+
 
     <TaskBar>
       <TaskPanel />
     </TaskBar>
+
+
 
       <b-row>
         <b-row >

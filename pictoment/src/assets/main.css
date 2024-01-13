@@ -30,20 +30,26 @@
   max-width: 50%;
 }
 
+/* Side tab */
+
+.tab-side {
+  max-width: 30vh;
+}
+
 /* Tab */
 
 .tab {
   position: relative;
-  background-color: var(--con-bg);
+  background-color: var(--bg);
   padding: 0.3rem;
   padding-top: 3rem;
-  border-bottom: 4px solid var(--con-shadow);
-  border-top: 4px solid var(--con-sec-shadow);
+  border-bottom: 4px solid var(--shadow);
+  border-top: 4px solid var(--pri);
   box-shadow:
-    -4px 0 0 -2px var(--con-sec-shadow),   
-    -8px 0 0 -4px var(--con-sec-shadow), 
-     4px 0 0 -2px var(--con-shadow),   
-     8px 0 0 -4px var(--con-shadow); 
+    -4px 0 0 -2px var(--pri),   
+    -8px 0 0 -4px var(--pri), 
+     4px 0 0 -2px var(--shadow),   
+     8px 0 0 -4px var(--shadow); 
   max-height: 85vh;
 }
 
@@ -55,12 +61,16 @@
   height: 100%;
   left: 0;
   top: 0;
-  border: 4px solid var(--con-shade);
+  border: 4px solid var(--shade);
+}
+
+.tab-side .tab-title {
+  width: 50%;
 }
 
 .tab-title {
-  background-color: var(--con-tab);
-  color: var(--con-bg);
+  background-color: var(--sec);
+  color: var(--bg);
   display: block;
   position: absolute;
   left: 0;
@@ -69,17 +79,16 @@
   width: 70%;
   z-index: 1;
   padding: 0.2rem 0.5rem;
-
   font-size: 1.5rem;
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-shadow:
-      0.5px 0.5px 0 var(--con-tab-sec),
-    -1px -1px 0 var(--con-tab-sec),  
-     1px -1px 0 var(--con-tab-sec),
-     -1px 1px 0 var(--con-tab-sec),
-      1px 1px 0 var(--con-tab-sec);
+      0.5px 0.5px 0 var(--sec-d),
+    -1px -1px 0 var(--sec-d),  
+     1px -1px 0 var(--sec-d),
+     -1px 1px 0 var(--sec-d),
+      1px 1px 0 var(--sec-d);
   }
 
 .tab-title:before, .tab-title:after {
@@ -89,7 +98,7 @@
   height: 50%;
   width: 3.5vh;
   z-index: 2;
-  background-color: var(--con-tab);
+  background-color: var(--sec);
 }
 
 .tab-title:before {
@@ -107,7 +116,7 @@
   z-index: 1;
   right: 0;
   top: 0;
-  color: var(--con-icons);
+  color: var(--ter);
   transform: scale(0.9);
 }
 
@@ -120,13 +129,13 @@
 
 .pixcanvas {
   padding: 0.3rem;
-  border-bottom: 3px solid var(--con-shade);
-  border-top: 3px solid var(--con-shade);
+  border-bottom: 3px solid var(--shade);
+  border-top: 3px solid var(--shade);
   box-shadow:
-    -4px 0 0 -2px var(--con-shade),   
-    -6.5px 0 0 -4px var(--con-shade), 
-     4px 0 0 -2px var(--con-shade),   
-     6.5px 0 0 -4px var(--con-shade); 
+    -4px 0 0 -2px var(--shade),   
+    -6.5px 0 0 -4px var(--shade), 
+     4px 0 0 -2px var(--shade),   
+     6.5px 0 0 -4px var(--shade); 
 }
 
 .guide {
@@ -150,58 +159,54 @@
   content: '';
   z-index: -1;
   position: fixed;
-  background-color: var(--con-sec-shadow);
+  background-color: var(--pri);
   padding: 0.3rem;
   margin: 0.1rem 0;
   width: 100%;
   height: 11vh;
   bottom: -6vh;
   left: 0;
-  border: solid 3.5px var(--con-shadow);
-  clip-path: polygon(
-    0px calc(100% - 35px),
-    5px calc(100% - 35px),
-    5px calc(100% - 25px),
-    10px calc(100% - 25px),
-    10px calc(100% - 15px),
-    15px calc(100% - 15px),
-    15px calc(100% - 10px),
-    25px calc(100% - 10px),
-    25px calc(100% - 5px),
-    35px calc(100% - 5px),
-    35px 100%,
-    calc(100% - 35px) 100%,
-    calc(100% - 35px) calc(100% - 5px),
-    calc(100% - 25px) calc(100% - 5px),
-    calc(100% - 25px) calc(100% - 10px),
-    calc(100% - 15px) calc(100% - 10px),
-    calc(100% - 15px) calc(100% - 15px),
-    calc(100% - 10px) calc(100% - 15px),
-    calc(100% - 10px) calc(100% - 25px),
-    calc(100% - 5px) calc(100% - 25px),
-    calc(100% - 5px) calc(100% - 35px),
-    100% calc(100% - 35px),
-    100% 35px,
-    calc(100% - 5px) 35px,
-    calc(100% - 5px) 25px,
-    calc(100% - 10px) 25px,
-    calc(100% - 10px) 15px,
-    calc(100% - 15px) 15px,
-    calc(100% - 15px) 10px,
-    calc(100% - 25px) 10px,
-    calc(100% - 25px) 5px,
-    calc(100% - 35px) 5px,
-    calc(100% - 35px) 0px,
-    35px 0px,
-    35px 5px,
-    25px 5px,
-    25px 10px,
-    15px 10px,
-    15px 15px,
-    10px 15px,
-    10px 25px,
-    5px 25px,
-    5px 35px,
-    0px 35px
-  );
+  clip-path: var(--pixel-bottom-circle);
 }
+
+/* Taskbar buttons */
+.taskbar-btn {
+  height: 11vh;
+  width: 11vh;
+  display: block;
+  background-color: var(--shadow);
+  color: var(--shadow);
+  clip-path: var(--pixel-circle);
+  position: relative;
+  transition: all 200ms cubic-bezier(0.4, 0, 1, 1);
+}
+
+.taskbar-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: var(--bg);
+  border: 4px solid var(--shade);
+  border-radius: 100px;
+  height: 95%;
+  width: 95%;
+  clip-path: var(--pixel-circle);
+  display: block;
+  transition: all 200ms cubic-bezier(0.4, 0, 1, 1);
+}
+
+.taskbar-btn:hover::after {
+  background-color: var(--pri-d);
+}
+
+.taskbar-btn:hover{
+  background-color: var(--text);
+  color: var(--text);
+  transform: scale(1.05) translateY(-5%);
+}
+
+
