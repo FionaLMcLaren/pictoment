@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div>
+  <div id="palette-con" class="d-none">
     <b-row>
         <b-col>
           <PaletteSelector />

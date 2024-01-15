@@ -54,8 +54,11 @@ export const store = reactive({
     });
   },
 
-  selectSize(selSize) {
-    this.size = selSize;
-  }
+  selectSize(size, sizePanel) {
+    this.size = size.value;
+    sizePanel.forEach(sizeBtn => {
+      sizeBtn.state = sizeBtn == size;
+    });
+  },
   
 })

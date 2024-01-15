@@ -33,7 +33,7 @@
 /* Side tab */
 
 .tab-side {
-  max-width: 30vh;
+  width: 35vh !important;
 }
 
 /* Tab */
@@ -51,6 +51,7 @@
      4px 0 0 -2px var(--shadow),   
      8px 0 0 -4px var(--shadow); 
   max-height: 85vh;
+  width: 100vh;
 }
 
 .tab:before {

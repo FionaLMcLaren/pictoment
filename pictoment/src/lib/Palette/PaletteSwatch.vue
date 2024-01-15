@@ -4,18 +4,19 @@
 
 <template>
   <div>
-    <b-form-group label="colours" v-slot="{ ariaDescribedby }">
-      <b-form-radio 
+
+
+    <b-button-group size="sm" vertical>
+        <b-button
         v-for="(colourBtn, idx) in store.palette.colours"
-        :aria-describedby="ariaDescribedby" 
-        name="colours" 
-        class="col-op"
-        :value="store.palette.colours[idx]"
-        :style="{backgroundColor: store.palette.colours[idx] }"
-        v-on:change = "store.selectColour(colourBtn)">
-        {{ store.palette.colours[idx] }}
-      </b-form-radio>
-    </b-form-group>
+          :key="idx"
+          :pressed.sync="colourBtn.state"
+          :style="{backgroundColor: colourBtn }"
+          @click = "store.selectColour(colourBtn)"
+        >
+          {{ colourBtn }}
+        </b-button>
+    </b-button-group>
   </div>
 </template>
 

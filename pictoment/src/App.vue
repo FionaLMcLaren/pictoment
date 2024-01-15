@@ -20,12 +20,10 @@
 
   <main>
     <b-container>   
-      <b-row>
+      <b-row >
 
         <b-col>
-          <SideTab>
-            hii
-          </SideTab>
+          <SideTab />
         </b-col>
 
         <b-col cols="8">
@@ -33,34 +31,12 @@
             <Canvas />
           </CanvasTab>
         </b-col>
+    
       </b-row>
-
-      
-
-
 
     <TaskBar>
       <TaskPanel />
     </TaskBar>
-
-
-
-      <b-row>
-        <b-row >
-            <PalettePanel />
-        </b-row>
-
-        <b-row>
-          <b-col >
-              <ToolPanel />
-          </b-col>
-
-          <b-col>
-              <CanvasPanel />
-          </b-col>
-        </b-row>
-
-      </b-row>
     </b-container>
   </main>
 </template>

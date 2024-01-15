@@ -5,8 +5,8 @@
 </script>
 
 <template>
-  <div>
-    <b-row>
+  <b-container id="tool-con">
+    <b-row >
         <b-col>
           <ToolSelector />
         </b-col>
@@ -15,5 +15,5 @@
           <ToolSizer />
         </b-col>
       </b-row>
-  </div>
+    </b-container>
 </template>

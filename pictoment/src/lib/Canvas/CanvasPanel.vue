@@ -24,7 +24,7 @@
 
 
 <template>
-  <div>
+  <div id="canvas-con">
       <b-button-group size="lg">
         <b-button
           @click = "save()"

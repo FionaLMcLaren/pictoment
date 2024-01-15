@@ -4,25 +4,28 @@
 
   const sizeOps = ref
     ([
-      { name: 'sm', value: 1 }, 
-      { name: 'md', value: 2 },
-      { name: 'lg', value: 3 },
-      { name: 'xl', value: 5 }
+      { name: 'sm', value: 1, state: true }, 
+      { name: 'md', value: 2, state: false },
+      { name: 'lg', value: 3, state: false },
+      { name: 'xl', value: 5, state: false }
     ])
 
 </script>
 
 <template>
   <div>
-    <b-form-group label="sizes" v-slot="{ ariaDescribedby }">
-      <b-form-radio 
+
+
+    <b-button-group size="lg">
+        <b-button
         v-for="(sizeOp, idx) in sizeOps"
-        :aria-describedby="ariaDescribedby" 
-        name="sizes" 
-        :value="sizeOp.value"
-        v-on:change = "store.selectSize(sizeOp.value)">
-        {{ sizeOp.name }}
-      </b-form-radio>
-    </b-form-group>
+          :key="idx"
+          :pressed.sync="sizeOp.state"
+          @click = "store.selectSize(sizeOp, sizeOps)"
+        >
+          {{ sizeOp.name }}
+        </b-button>
+    </b-button-group>
+
   </div>
 </template>
