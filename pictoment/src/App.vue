@@ -19,17 +19,21 @@
   </header>
 
   <main>
-    <b-container>   
-      <b-row >
+    <b-container fluid class="mb-5">   
+      <b-row class="align-items-center">
 
         <b-col>
           <SideTab />
         </b-col>
 
-        <b-col cols="8">
+        <b-col>
           <CanvasTab>
             <Canvas />
           </CanvasTab>
+        </b-col>
+
+        <b-col>
+          <SideTab info="true"/>
         </b-col>
     
       </b-row>

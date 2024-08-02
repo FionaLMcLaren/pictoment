@@ -21,11 +21,10 @@
 
 body {
   min-height: 100vh;
+
+  background-image: linear-gradient(to right top, #f5ebff, #eeedff, #e6efff, #e0f1ff, #dbf2ff, #daf2ff, #daf2ff, #d9f2ff, #ddf0ff, #e6edff, #f2e9ff, #ffe5ff);
+
   color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
   line-height: 1.6;
   font-family: 'VT323', monospace;
   font-size: 20px;

@@ -15,7 +15,6 @@
   }
 
   #app {
-    display: grid;
     padding: 0 2rem;
   }
 }
@@ -34,6 +33,11 @@
 
 .tab-side {
   width: 35vh !important;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
 }
 
 /* Tab */
@@ -210,4 +214,51 @@
   transform: scale(1.05) translateY(-5%);
 }
 
+/* Dropdown */
 
+.dropdown-toggle {
+  color: var(--sec-d);;
+}
+
+.dropdown {
+  background-color: var(--ter);
+  padding: 0.1rem 0.2rem;
+  border-radius: 0;
+  border-bottom: 2px solid var(--ter-d);
+  border-top: 2px solid var(--ter-l);
+  box-shadow:
+    -4px 0 0 -2px var(--ter-l),   
+    -8px 0 0 -4px var(--ter-l), 
+     4px 0 0 -2px var(--ter-d),   
+     8px 0 0 -4px var(--ter-d); 
+}
+
+.dropdown-menu {
+  background-color: var(--ter-l);
+  margin-left: -1vh;
+  border-radius: 0;
+  border-left:  3px solid var(--ter-d);
+}
+
+/* Size Selectors */ 
+
+.tool-sizer-action {
+  border: none;
+  background-color: transparent;
+  color: var(--ter);
+  white-space: nowrap;
+}
+
+.tool-sizer-action:hover {
+  border: none;
+  background-color: transparent;
+  color: var(--ter-d);
+}
+
+.tool-sizer-action:checked + .tool-sizer-action, 
+.tool-sizer-action:first-child:active, 
+.tool-sizer-action.active, .tool-sizer-action.show {
+  border: none;
+  background-color: transparent;
+  color: var(--ter-d);
+}

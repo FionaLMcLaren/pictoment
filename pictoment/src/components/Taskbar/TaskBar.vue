@@ -1,5 +1,5 @@
 <template>
-    <b-container class="taskbar">
+    <b-container class="taskbar ">
         <slot />
     </b-container>
 </template>

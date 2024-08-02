@@ -4,7 +4,7 @@
 
 <template>
   <div>
-      <b-dropdown >
+      <b-dropdown variant="link" toggle-class="text-decoration-none">
         <template #button-content>
           <span id="paletteSelectedName">{{store.palette.name}}</span>
         </template>

@@ -44,7 +44,7 @@
 </script>
 
 <template>
-    <b-container class="justify-content-center">
+    <b-container fluid>
 
       <b-row class="gap-5">
 
