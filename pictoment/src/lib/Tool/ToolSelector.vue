@@ -12,8 +12,8 @@
 
 <template>
   <div>
-      <b-button-group size="lg">
-        <b-button
+      <b-button-group>
+        <b-button class="tool-selector-action"
           v-for="(toolBtn, idx) in toolBtns"
           :key="idx"
           :pressed.sync="toolBtn.state"
